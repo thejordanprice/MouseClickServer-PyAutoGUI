@@ -27,9 +27,7 @@ python mouse_click_server.py
 ```
 
 
-Upon the first run, the server will generate an API key and display it in the command-line interface. The API key will be saved to `key.txt`. Subsequent runs will load the API key from the file.
-
-To generate a new API key, simply delete the `key.txt` file.
+Upon the first run, the server will generate an API key and display it in the command-line interface. The API key will be saved to `key.txt`. Subsequent runs will load the API key from the file. To generate a new API key, simply delete the file.
 
 ## Making a Mouse Click Request
 
