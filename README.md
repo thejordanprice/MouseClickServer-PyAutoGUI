@@ -36,3 +36,31 @@ To trigger a mouse click, send an HTTP POST request to the `/click` endpoint wit
 Example using curl:
 
     curl -X POST -H "Authorization: YOUR_API_KEY" http://localhost:5000/click
+
+Example using fetch:
+
+```
+const API_KEY = 'YOUR_API_KEY';
+const SERVER_URL = 'http://localhost:5000/click';
+
+fetch(SERVER_URL, {
+  method: 'POST',
+  headers: {
+    'Authorization': API_KEY,
+  },
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    // Handle the server response here if needed
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    // Handle errors here
+  });
+```
