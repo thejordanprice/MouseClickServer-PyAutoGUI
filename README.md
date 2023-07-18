@@ -6,18 +6,25 @@ This repository contains a simple Python-based web server that listens for HTTP 
 
 1. Clone the repository to your local machine:
 
-    git clone https://github.com/your-username/MouseClickServer-PyAutoGUI.git
-    cd MouseClickServer-PyAutoGUI
+```
+git clone https://github.com/your-username/MouseClickServer-PyAutoGUI.git
+
+cd MouseClickServer-PyAutoGUI
+```
 
 
-2. Install the required libraries if you haven't already:
+3. Install the required libraries if you haven't already:
 
-    pip install flask pyautogui
+```
+pip install flask pyautogui
+```
 
 
-3. Run the server:
+4. Run the server:
 
-    python mouse_click_server.py
+```
+python mouse_click_server.py
+```
 
 
 Upon the first run, the server will generate an API key and display it in the command-line interface. The API key will be saved to `key.txt`. Subsequent runs will load the API key from the file.
