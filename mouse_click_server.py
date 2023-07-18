@@ -35,11 +35,23 @@ def click_mouse():
     if api_key != expected_api_key:
         return jsonify({'status': 'error', 'message': 'Invalid API key'}), 401
 
-    try:
-        pyautogui.click()  # Simulate a mouse click
-        return jsonify({'status': 'success', 'message': 'Mouse clicked successfully'})
-    except Exception as e:
-        return jsonify({'status': 'error', 'message': str(e)}), 500
+    request_data = request.get_json()
+    x = request_data.get('x')
+    y = request_data.get('y')
+
+    if x is not None and y is not None:
+        try:
+            pyautogui.click(x=x, y=y)  # Simulate a mouse click at the specified coordinates
+            return jsonify({'status': 'success', 'message': f'Mouse clicked at ({x}, {y}) successfully'})
+        except Exception as e:
+            return jsonify({'status': 'error', 'message': str(e)}), 500
+    else:
+        # If x or y is not provided in the request, perform a regular mouse click
+        try:
+            pyautogui.click()
+            return jsonify({'status': 'success', 'message': 'Mouse clicked successfully'})
+        except Exception as e:
+            return jsonify({'status': 'error', 'message': str(e)}), 500
 
 if __name__ == '__main__':
     api_key = get_or_generate_api_key()
