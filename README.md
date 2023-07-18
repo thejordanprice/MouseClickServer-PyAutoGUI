@@ -7,7 +7,7 @@ This repository contains a simple Python-based web server that listens for HTTP 
 1. Clone the repository to your local machine:
 
 ```
-git clone https://github.com/your-username/MouseClickServer-PyAutoGUI.git
+git clone https://github.com/thejordanprice/MouseClickServer-PyAutoGUI.git
 
 cd MouseClickServer-PyAutoGUI
 ```
